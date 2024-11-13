@@ -3,18 +3,19 @@ using namespace std;
 
 int main() {
     // 여기에 코드를 작성해주세요.
-    int a, b, i;
+    int n;
 
-	cin >> a >> b;
-	
-	i = a;
+	cin >> n;
 
-	while(i <= b) {
-		cout << i << " ";
-		if(i % 2 == 1)
-			i *= 2;
+	for(int i = 1; i <= n; i++) {
+		if(i % 3 == 0)
+			cout << "0 ";
+		else if(i % 10 == 3 || i % 10 == 6 || i % 10 == 9)
+			cout << "0 ";
+		else if(i / 10 == 3 || i / 10 == 6 || i / 10 == 9)
+			cout << "0 ";
 		else
-			i += 3;
+			cout << i << " ";
 	}
 
     return 0;
