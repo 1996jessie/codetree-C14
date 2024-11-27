@@ -15,8 +15,7 @@ int main() {
     for(int i = 0; i < 10; i++) {
         if(i % 2 == 0) {
             sum1 += arr[i];
-        }
-        else {
+        } else {
             sum2 += arr[i];
         }
 
@@ -24,8 +23,7 @@ int main() {
 
     if(sum1 > sum2) {
         cout << sum1 - sum2;
-    }
-    else {
+    } else {
         cout << sum2 - sum1;
     }
 
