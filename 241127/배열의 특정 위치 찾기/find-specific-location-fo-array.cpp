@@ -8,12 +8,14 @@ int main() {
     int sum3 = 0;
     int cnt = 0;
 
-    for(int i = 0; i < 10; i++)
+    for(int i = 0; i < 10; i++) {
         cin >> arr[i];
+    }
 
     for(int i = 0; i < 10; i++) {
-        if((i + 1) % 2 == 0)
+        if((i + 1) % 2 == 0) {
             sum2 += arr[i];
+        }
         if((i + 1) % 3 == 0) {
             sum3 += arr[i];
             cnt++;
@@ -22,7 +24,6 @@ int main() {
 
     double avg3 = (double)sum3 / cnt;
 
-    // 출력
     cout << fixed;
     cout.precision(1);
     cout << sum2 << " " << avg3;
