@@ -7,9 +7,17 @@ void PrintStar(int n) {
         return;
     }
 
-    cout << n << " ";
+    for (int i = 1; i <= n; i++) {
+        cout << "* ";
+    }
+    cout << endl;
+
     PrintStar(n - 1);
-    cout << n << " ";
+
+    for (int i = 1; i <= n; i++) {
+        cout << "* ";
+    }
+    cout << endl;
 }
 
 int main() {
@@ -18,6 +26,6 @@ int main() {
     cin >> n;
 
     PrintStar(n);
-
+    
     return 0;
 }
