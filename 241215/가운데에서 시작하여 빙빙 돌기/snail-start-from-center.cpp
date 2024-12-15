@@ -29,33 +29,38 @@ bool End() {
 }
 
 int main() {
-    // 여기에 코드를 작성해주세요.
     cin >> n;
-    
+
     curr_x = n / 2;
     curr_y = n / 2;
     move_dir = 0;
     move_num = 1;
-    
+
     int cnt = 1;
 
-    while (!End()) {
-        for (int i = 0; i < move_num; i++) {
+    while(!End()) {
+        for(int i = 0; i < move_num; i++) {
             grid[curr_x][curr_y] = cnt++;
             Move();
 
-            if (End())
+            if(End()) {
                 break;
+            }
         }
-        
+
         move_dir = (move_dir + 1) % 4;
-        if (move_dir == 0 || move_dir == 2)
+        if(move_dir == 0 || move_dir == 2) {
             move_num++;
+        }
+        if(End()) {
+            break;
+        }
     }
-    
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++)
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
             cout << grid[i][j] << " ";
+        }
         cout << endl;
     }
 
