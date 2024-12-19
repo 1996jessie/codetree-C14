@@ -13,8 +13,9 @@ int main() {
     // 여기에 코드를 작성해주세요
     cin >> n;
 
-    for(int i = 0; i < n - 1; i++)
+    for(int i = 0; i < n - 1; i++) {
         cin >> a[i];
+    }
 
     for(int i = 1; i <= n; i++) {
         arr[0] = i;
@@ -28,13 +29,12 @@ int main() {
         for(int j = 0; j < n; j++) {
             if(arr[j] <= 0 || arr[j] > n) {
                 satisfied = false;
-                break;
+            } else {
+                if(exist[arr[j]]) {
+                    satisfied = false;
+                }
+                exist[arr[j]] = true;
             }
-            if(exist[arr[j]]) {
-                satisfied = false;
-                break;
-            }
-            exist[arr[j]] = true;
         }
 
         if(satisfied) {
@@ -45,5 +45,4 @@ int main() {
         }
     }
 
-    return 0;
 }
