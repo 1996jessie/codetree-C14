@@ -1,38 +1,34 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
+
+#define MAX_N 10
+#define MAX_NUM 10000
 
 using namespace std;
 
 int n;
-string seat;
+int a[MAX_N], b[MAX_N];
 
-int MinDist() {
-    int min_dist = n;
+bool Satisfy(int x) {
     for(int i = 0; i < n; i++) {
-        for(int j = i + 1; j < n; j++) {
-            if(seat[i] == '1' && seat[j] == '1') {
-                min_dist = min(min_dist, j - i);
-            }
+        x *= 2;
+        if(x < a[i] || x > b[i]) {
+            return false;
         }
     }
-    return min_dist;
+    return true;
 }
 
 int main() {
     // 여기에 코드를 작성해주세요
     cin >> n;
-    cin >> seat;
-
-    int ans = 0;
     for(int i = 0; i < n; i++) {
-        if(seat[i] == '0') {
-            seat[i] = '1';
-            ans = max(ans, MinDist());
-            seat[i] = '0';
+        cin >> a[i] >> b[i];
+    }
+    for(int x = 1; x <= MAX_NUM; x++) {
+        if(Satisfy(x)) {
+            cout << x;
+            break;
         }
     }
-
-    cout << ans;
     return 0;
 }
